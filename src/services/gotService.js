@@ -1,4 +1,4 @@
-class GotService{
+export default class GotService{
 
     constructor() {
         this._apiBase ='https://www.anapioficeandfire.com/api'
@@ -26,12 +26,3 @@ class GotService{
     }
 }
 
-const got = new GotService();
-
-got.getAllCharacters()
-.then(res => {
-    res.forEach(item => console.log(item.name));
-});
-
-got.getCharacter(130)
-.then(res => console.log(res));
