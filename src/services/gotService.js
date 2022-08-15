@@ -38,6 +38,21 @@ export default class GotService{
     }
 
     _transformCharacter(char){
+        const missing = "Missing information";
+
+        if(char.died === ""){
+            char.died= missing;
+        }
+        if(char.gender === ""){
+            char.gender= missing;
+        }
+        if(char.born === ""){
+            char.born= missing;
+        }
+        if(char.culture === ""){
+            char.culture= missing;
+        }
+
         return{
             name: char.name,
             gender: char.gender,
