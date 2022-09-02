@@ -37,7 +37,7 @@ export default class GotService{
         return this.getResource(`/books/`);
     }
 
-    _transformCharacter(char){
+    _transformCharacter=(char)=>{
         const missing = "Missing information";
 
         if(char.died === ""){
@@ -63,7 +63,7 @@ export default class GotService{
     }
 
     
-    _transformHouse(house){
+    _transformHouse=(house)=>{
         return{
             name: house.name,
             region: house.region,
@@ -74,7 +74,7 @@ export default class GotService{
         }
     }
     
-    _transformBook(book){
+    _transformBook=(book)=>{
         return {
             name: book.name,
             numberOfPages: book.numberOfPages,

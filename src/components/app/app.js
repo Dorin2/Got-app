@@ -4,9 +4,15 @@ import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../errorMesage';
 import CharacterPage from '../characterPage';
+import ItemList from '../itemList';
+import CharDetails from '../charDetails';
+import GotService from '../../services/gotService';
 
 
 export default class App extends Component {
+    
+    gotService = new GotService();
+    
     state = {
         showRandomChar: true,
         error: false
@@ -52,9 +58,10 @@ export default class App extends Component {
                         </Col>
                     </Row>
                    <CharacterPage/>
-                   {/* <Row>
+                   <Row>
                         <Col md='6'>
-                            <ItemList onCharSelected={this.onCharSelected} />
+                            <ItemList onCharSelected={this.onCharSelected}
+                            getData={this.gotService.getAllBooks} />
                         </Col>
                         <Col md='6'>
                             <CharDetails charId={this.state.selectedChar} />
@@ -62,12 +69,14 @@ export default class App extends Component {
                     </Row>
                    <Row>
                         <Col md='6'>
-                            <ItemList onCharSelected={this.onCharSelected} />
+                            <ItemList 
+                            onCharSelected={this.onCharSelected} 
+                            getData={this.gotService.getAllHouses} />
                         </Col>
                         <Col md='6'>
                             <CharDetails charId={this.state.selectedChar} />
                         </Col>
-                    </Row> */}
+                    </Row>
                 </Container>
             </>
         );
