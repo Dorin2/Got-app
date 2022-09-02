@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './itemList.css';
-import GotService from '../../services/gotService';
 import Spinner from '../spinner';
 
 
@@ -8,17 +7,18 @@ import Spinner from '../spinner';
 export default class ItemList extends Component {
 
 
-    gotService = new GotService();
 
     state ={
-        charList: null
+        itemList: null
     }
 
     componentDidMount(){
-        this.gotService.getAllCharacters()
-            .then((charList)=>{
+        const {getData} = this.props;
+
+        getData()
+            .then((itemList)=>{
                 this.setState({
-                    charList
+                    itemList
                 })
             })
     }
