@@ -60,21 +60,22 @@ export default class App extends Component {
                    <CharacterPage/>
                    <Row>
                         <Col md='6'>
-                            <ItemList onCharSelected={this.onCharSelected}
-                            getData={this.gotService.getAllBooks} />
+                            <ItemList 
+                                onCharSelected={this.onCharSelected}
+                                getData={this.gotService.getAllBooks}/>
                         </Col>
                         <Col md='6'>
-                            <CharDetails charId={this.state.selectedChar} />
+                            <CharDetails charId={this.state.selectedChar}/>
                         </Col>
                     </Row>
                    <Row>
                         <Col md='6'>
                             <ItemList 
-                            onCharSelected={this.onCharSelected} 
-                            getData={this.gotService.getAllHouses} />
+                                onCharSelected={this.onCharSelected} 
+                                getData={this.gotService.getAllHouses}/>
                         </Col>
                         <Col md='6'>
-                            <CharDetails charId={this.state.selectedChar} />
+                            <CharDetails charId={this.state.selectedChar}/>
                         </Col>
                     </Row>
                 </Container>

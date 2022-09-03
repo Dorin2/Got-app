@@ -36,7 +36,7 @@ export default class GotService{
         
     }
     getAllBooks = async()=>{
-        const res = this.getResource(`/books/`);
+        const res = await this.getResource(`/books/`);
         return res.map(this._transformBook);
     }
 
