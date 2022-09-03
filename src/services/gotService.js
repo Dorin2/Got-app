@@ -21,20 +21,23 @@ export default class GotService{
        const res = await this.getResource('/characters?page=5&pageSize=10');
        return res.map(this._transformCharacter)
     }
-    getCharacter= async(id)=>{
+    getCharacter = async(id)=>{
         const  character = await this.getResource(`/characters/${id}`);
         return this._transformCharacter(character);
     }
-    getAllHouses= async(id)=>{
-        return this.getResource(`/houses/`);
+    getAllHouses = async()=>{
+        const res = await this.getResource(`/houses/`);
+        return res.map(this._transformHouse);
     }
 
-    getHouse= async(id)=>{
-        return this.getResource(`/houses/${id}/`);
-
+    getHouse = async(id)=>{
+        const house = await this.getResource(`/houses/${id}/`);
+        return this._transformHouse(house);
+        
     }
-    getAllBooks= async()=>{
-        return this.getResource(`/books/`);
+    getAllBooks = async()=>{
+        const res = this.getResource(`/books/`);
+        return res.map(this._transformBook);
     }
 
     _transformCharacter=(char)=>{
