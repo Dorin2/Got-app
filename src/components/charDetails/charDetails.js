@@ -59,14 +59,19 @@ export default class CharDetails extends Component {
             return <span className='select-error'>Please select a character</span>
 
         }
-        const { name, gender,born,died,culture} = this.state.char;
+        const {char} = this.state;
+        const { name} = char;
 
 
         return (
             <div className="char-details rounded">
                 <h4>{name}</h4>
                 <ul className="list-group list-group-flush">
-                    {this.props.children}
+                    {
+                        React.Children.map(this.props.children,(child)=>{
+                            
+                        })
+                    }
                 </ul>
             </div>
         );
