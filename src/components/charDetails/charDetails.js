@@ -4,12 +4,12 @@ import GotService from '../../services/gotService';
 
 
 
-const Field =({item, field, label}) =>{
+const Field =({char, field, label}) =>{
 
     return(
         <li className="list-group-item d-flex justify-content-between">
                 <span className="term">{label}</span>
-                <span>{[field]}</span>
+                <span>{char[field]}</span>
         </li>
 
     )
@@ -69,7 +69,7 @@ export default class CharDetails extends Component {
                 <ul className="list-group list-group-flush">
                     {
                         React.Children.map(this.props.children,(child)=>{
-                            
+                            return React.cloneElement(child,{char})
                         })
                     }
                 </ul>
