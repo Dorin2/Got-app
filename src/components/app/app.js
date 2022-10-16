@@ -48,7 +48,7 @@ export default class App extends Component {
 
 
         return (
-            // <Router>
+            <Router>
                 <div className='app'> 
                     <Container>
                         <Header />
@@ -84,10 +84,11 @@ export default class App extends Component {
                                 <CharDetails charId={this.state.selectedChar}/>
                             </Col>
                         </Row>
-                        {/* <Route path='/characters' component={CharacterPage}/> */}
+                        <Route path='/characters' component={CharacterPage}/>
+                        <Route path='/' component={()=><h1>Welcome!</h1>}/>
                     </Container>
                 </div>
-            /* </Router> */
+            </Router> 
         );
     }
 };
