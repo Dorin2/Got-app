@@ -86,6 +86,7 @@ export default class App extends Component {
                         </Row>
                         <Route path='/characters' component={CharacterPage}/>
                         <Route path='/' component={()=><h1>Welcome!</h1>}/>
+                        <Route path='/' component={()=><h1>sdfsdf</h1>}/>
                     </Container>
                 </div>
             </Router> 
